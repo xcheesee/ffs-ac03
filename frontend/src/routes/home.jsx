@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import MainComponent from "../components/mainComponent";
 
 const Home = () => {
 	const [hello, setHello] = useState("")
@@ -24,13 +25,11 @@ const Home = () => {
 	}, [])
 	if (hello === "") {
 		return (
-			<div style={{fontSize: '64px', display: 'flex', justifyContent: 'center'}}>Carregando...</div>
+			<MainComponent data="Carregando..." />
 		)
 	}
 	return(
-		<>
-			<div style={{fontSize: '64px', display: 'flex', justifyContent: 'center'}}>{hello.message}</div>
-		</>
+		<MainComponent data={hello.message} />
 	)
 }
 
